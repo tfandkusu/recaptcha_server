@@ -57,11 +57,9 @@ fun Application.main() {
             val request = call.receive<CommentRequest>()
             // 検証API呼び出し
             val response = service.verify(secret, request.token)
-            // 成功フラグ、Androidアプリのパッケージ名、チャレンジの時間を検証する
-            val currentTime = System.currentTimeMillis()
+            // 成功フラグとAndroidアプリのパッケージ名を検証する
             if (response.success &&
-                response.apk_package_name == packageName &&
-                response.challenge_ts.time > currentTime - 5 * 60 * 1000
+                response.apk_package_name == packageName
             ) {
                 // 検証成功
                 call.respond(mapOf("result" to "ok", "comment" to request.comment))
