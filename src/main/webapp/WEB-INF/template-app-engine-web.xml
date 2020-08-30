@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<appengine-web-app xmlns="http://appengine.google.com/ns/1.0">
+    <threadsafe>true</threadsafe>
+    <runtime>java8</runtime>
+    <env-variables>
+        <env-var name="RECAPTCHA_SECRET_KEY" value="your reCAPTCHA secret key"/>
+        <env-var name="APK_PACKAGE_NAME" value="your APL package name"/>
+    </env-variables>
+</appengine-web-app>
